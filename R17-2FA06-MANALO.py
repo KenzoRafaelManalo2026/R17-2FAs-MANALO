@@ -1,12 +1,19 @@
-# Version 1
-first_name = input("Enter first name: ")
-last_name = input("Enter last name: ")
-section = input("Enter section: ")
-favorite_subject = input("Enter favorite subject: ")
+# Version 2: Added String Formatting
+first_name = input("Enter first name: ").strip()
+last_name = input("Enter last name: ").strip()
+section = input("Enter section: ").strip()
+favorite_subject = input("Enter favorite subject: ").strip()
 
-full_name = first_name + " " + last_name
+full_name = f"{first_name} {last_name}".title()
+full_name_capitalized = full_name.upper()
+section_upper = section.upper()
+subject_proper = favorite_subject.title()
 
-print("\nStudent Information:")
-print("Name:", full_name)
-print("Section:", section)
-print("Favorite Subject:", favorite_subject)
+char_count = len(full_name)
+
+print("\nFormatted Output:")
+print(f"Name: {full_name}")
+print(f"Name Code: {full_name_capitalized}")
+print(f"Section: {section_upper}")
+print(f"Favorite Subject: {subject_proper}")
+print(f"Character Count: {char_count}")
