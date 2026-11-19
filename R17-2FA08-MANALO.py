@@ -1,4 +1,4 @@
-# Version 1: Basic Input and Output
+# Version 2: Added string cleaning and formatting for student names, sections, and event titles.
 first_name = input("Enter student first name: ")
 last_name = input("Enter student last name: ")
 section = input("Enter section: ")
@@ -7,10 +7,19 @@ event_year = input("Enter event year: ")
 event_month = input("Enter event month: ")
 event_day = input("Enter event day: ")
 
+clean_first = first_name.strip().title()
+clean_last = last_name.strip().title()
+full_name = clean_first + " " + clean_last
+name_code = full_name.upper()
+clean_section = section.strip().upper()
+clean_event = event_name.strip().title()
+
 print("\nStudent Event Registration Summary")
-print("Name:", first_name, last_name)
-print("Section:", section)
-print("Event:", event_name)
-print("Event Date:", event_month + "/" + event_day + "/" + event_year)
+print("Name:", full_name)
+print("Name Code:", name_code)
+print("Section:", clean_section)
+print("Event:", clean_event)
+print("Event Date:", event_month.strip() + " " + event_day.strip() + ", " + event_year.strip())
 print("Language Used: Python")
+print("String Feature Used: strip(), title(), upper()")
 print("Registration record created successfully.")
